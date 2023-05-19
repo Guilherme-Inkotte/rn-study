@@ -1,10 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "Do you wish to push these updates?"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) git push -u origin $1; break;;
-        No ) echo "OK"; break;;
-    esac
-done
+git push -u origin $1
