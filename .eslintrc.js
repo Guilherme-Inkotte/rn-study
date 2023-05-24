@@ -14,7 +14,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
   ],
-  plugins: ['react-native', 'simple-import-sort', 'unused-imports'],
+  plugins: ['react-native', 'simple-import-sort', 'import', 'unused-imports'],
   parserOptions: {
     ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
     sourceType: 'module', // Allows for the use of imports
@@ -34,38 +34,7 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
-    'simple-import-sort/exports': 'error',
-    //Code Pattern
-    'linebreak-style': ['error', 'unix'],
-    'no-console': ['warn', { allow: ['warn'] }],
-    'no-empty-function': 'off',
-    'no-extra-boolean-cast': 'off',
-    'no-unsafe-optional-chaining': 'off',
-    '@typescript-eslint/unbound-method': 'off',
-    'no-unused-vars': 'off',
-    'react-native/no-inline-styles': 'warn',
-    'react/display-name': 'off',
-    'react/no-unescaped-entities': 'off',
-    'react/prop-types': 'off',
-    quotes: ['error', 'double', { avoidEscape: true }],
-    semi: ['error', 'always'],
-    // Typescript
-    '@typescript-eslint/explicit-module-boundary-types': ['off'],
-    '@typescript-eslint/no-empty-function': 'off',
-    '@typescript-eslint/no-explicit-any': 'warn',
-    '@typescript-eslint/no-floating-promises': 'warn',
-    '@typescript-eslint/no-unsafe-assignment': 'off',
-    '@typescript-eslint/no-unsafe-member-access': 'off',
-    '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
-    '@typescript-eslint/no-unsafe-call': 'off',
-    '@typescript-eslint/no-misused-promises': [
-      'error',
-      {
-        checksConditionals: false,
-        checksVoidReturn: false,
-      },
-    ],
+
     // Imports Rules
     'simple-import-sort/imports': [
       'error',
@@ -95,6 +64,41 @@ module.exports = {
           // Other relative imports. Put same-folder imports and `.` last.
           ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
         ],
+      },
+    ],
+    'simple-import-sort/exports': 'error',
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
+    //Code Pattern
+    'linebreak-style': ['error', 'unix'],
+    'no-console': ['warn', { allow: ['warn'] }],
+    'no-empty-function': 'off',
+    'no-extra-boolean-cast': 'off',
+    'no-unsafe-optional-chaining': 'off',
+    '@typescript-eslint/unbound-method': 'off',
+    'no-unused-vars': 'off',
+    'react-native/no-inline-styles': 'warn',
+    'react/display-name': 'off',
+    'react/no-unescaped-entities': 'off',
+    'react/prop-types': 'off',
+    quotes: ['error', 'single', { avoidEscape: true }],
+    semi: ['error', 'always'],
+    // Typescript
+    '@typescript-eslint/explicit-module-boundary-types': ['off'],
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/no-floating-promises': 'warn',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      {
+        checksConditionals: false,
+        checksVoidReturn: false,
       },
     ],
   },
