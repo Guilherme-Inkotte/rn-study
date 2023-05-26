@@ -10,7 +10,8 @@
     "test": "jest",
     "prepare": "husky install",
     "lint-staged": "lint-staged --config lint-staged.js",
-    "commit": "cz"
+    "commit": "cz",
+    "postinstall": "cd ios && pod deintegrate && pod install && cd .."
   },
   "dependencies": {
     "react": "18.2.0",
