@@ -10,7 +10,8 @@
     "test": "jest",
     "prepare": "husky install",
     "lint-staged": "lint-staged --config lint-staged.js",
-    "commit": "cz"
+    "commit": "cz",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "patch-package": "^7.0.0",
