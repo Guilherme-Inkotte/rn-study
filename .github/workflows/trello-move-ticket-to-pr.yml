@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Call trello-github-actions
         id: call-trello-github-actions
-        uses: Guilherme-Inkotte/github-action-trello-integration@1.0.0
+        uses: Guilherme-Inkotte/github-action-trello-integration@v1.0.0
         with:
           action: pull_request_event_move_card
         env:
