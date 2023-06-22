@@ -1,0 +1,26 @@
+name: Move Trello card to PR column
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    #types: closed #for merged or just closed PRs
+    branches:
+      - develop
+
+jobs:
+  move_card_when_pull_request_merged_job:
+    runs-on: ubuntu-latest
+    name: Move Trello card to PR column when PR name refers to card ID
+    steps:
+      - name: Call trello-github-actions
+        id: call-trello-github-actions
+        uses: Guilherme-Inkotte/github-action-trello-integration@1.0.0
+        with:
+          action: pull_request_event_move_card
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TRELLO_API_KEY: ${{ secrets.TRELLO_API_KEY }}
+          TRELLO_API_TOKEN: ${{ secrets.TRELLO_API_TOKEN }}
+          TRELLO_BOARD_ID: 64492c7374701920148b4434
+          # Column "PR"
+          TRELLO_TARGET_LIST_ID: 64492c7374701920148b443e
