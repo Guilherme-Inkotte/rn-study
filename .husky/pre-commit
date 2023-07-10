@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-sh ./scripts/checkBranchName.sh && yarn lint-staged
+sh ./scripts/checkBranchName.sh && yarn lint-staged && npm run precommit && git add -A .

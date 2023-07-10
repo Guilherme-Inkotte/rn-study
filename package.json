@@ -6,14 +6,20 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "start": "react-native start",
+    "start": "yarn copy-env && react-native start",
     "test": "jest",
     "prepare": "husky install",
     "lint-staged": "lint-staged --config lint-staged.js",
     "commit": "cz",
-    "postinstall": "cd ios && pod deintegrate && pod install && cd .."
+    "postinstall": "cd ios && pod deintegrate && pod install && cd ..",
+    "copy-env": "cd scripts && sh copyEnvVars.sh ../.env && cd ..",
+    "obfuscate-secrets": "cd scripts && sh ./obfuscateSecrets.sh",
+    "precommit": "yarn obfuscate-secrets"
   },
   "dependencies": {
+    "appcenter": "^4.4.5",
+    "appcenter-analytics": "^4.4.5",
+    "appcenter-crashes": "^4.4.5",
     "patch-package": "^7.0.0",
     "react": "18.2.0",
     "react-native": "0.71.7"
