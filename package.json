@@ -14,6 +14,7 @@
     "postinstall": "cd ios && pod deintegrate && pod install && cd .."
   },
   "dependencies": {
+    "patch-package": "^7.0.0",
     "react": "18.2.0",
     "react-native": "0.71.7"
   },
